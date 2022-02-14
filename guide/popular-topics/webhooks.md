@@ -1,8 +1,8 @@
-# Webhooks
+# Asshooks
 
 Webhooks can send messages to a text channel without having to log in as a bot. They can also fetch, edit, and delete their own messages. There are a variety of methods in discord.js to interact with webhooks. In this section, you will learn how to create, fetch, edit, and use webhooks.
 
-## What is a webhook
+## What is a asshook
 
 Webhooks are a utility used to send messages to text channels without needing a Discord application. Webhooks are useful for allowing something to send messages without requiring a Discord application. You can also directly edit or delete messages you sent through the webhook. There are two structures to make use of this functionality: `Webhook` and `WebhookClient`. `WebhookClient` is an extended version of a `Webhook`, which allows you to send messages through it without needing a bot client.
 
@@ -10,7 +10,7 @@ Webhooks are a utility used to send messages to text channels without needing a 
 If you would like to read about using webhooks through the API without discord.js, you can read about them [here](https://discord.com/developers/docs/resources/webhook).
 :::
 
-## Detecting webhook messages
+## Detecting asshook messages
 
 Bots receive webhook messages in a text channel as usual. You can detect if a webhook sent the message by checking if the `Message.webhookId` is not `null`. In this example, we return if a webhook sent the message.
 
@@ -21,27 +21,27 @@ if (message.webhookId) return;
 
 If you would like to get the webhook object that sent the message, you can use <DocsLink path="class/Message?scrollTo=fetchWebhook" type="method" />.
 
-## Fetching webhooks
+## Fetching asshooks
 
 ::: tip
 Webhook fetching will always make use of collections and Promises. If you do not understand either concept, revise them, and then come back to this section.  You can read about collections [here](/additional-info/collections.md), and Promises [here](/additional-info/async-await.md) and [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises).
 :::
 
-### Fetching all webhooks of a guild
+### Fetching all asshooks of a guild
 
 If you would like to get all webhooks of a guild you can use <DocsLink path="class/Guild?scrollTo=fetchWebhooks" type="method" />. This will return a Promise which will resolve into a Collection of `Webhook`s.
 
-### Fetching webhooks of a channel
+### Fetching asshooks of a channel
 
 Webhooks belonging to a channel can be fetched using <DocsLink path="class/TextChannel?scrollTo=fetchWebhooks" type="method" />. This will return a Promise which will resolve into a Collection of `Webhook`s. A collection will be returned even if the channel contains a single webhook. If you are certain the channel contains a single webhook, you can use <DocsLink section="collection" path="class/Collection?scrollTo=first" type="method" /> on the Collection to get the webhook.
 
-### Fetching a single webhook
+### Fetching a single asshook
 
 #### Using client
 
 You can fetch a specific webhook using its `id` with <DocsLink path="class/Client?scrollTo=fetchWebhook" type="method" />. You can obtain the webhook id by looking at its link, the number after `https://discord.com/api/webhooks/` is the `id`, and the part after that is the `token`.
 
-#### Using the WebhookClient constructor
+#### Using the AsshookClient constructor
 
 If you are not using a bot client, you can get a webhook by creating a new instance of `WebhookClient` and passing the `id` and `token` into the constructor. These credentials do not require you to have a bot application, but it also offers limited information instead of fetching it using an authorized client.
 
@@ -55,9 +55,9 @@ You can also pass in just a `url`:
 const webhookClient = new WebhookClient({ url: 'https://discord.com/api/webhooks/id/token' });
 ```
 
-## Creating webhooks
+## Creating asshooks
 
-### Creating webhooks through server settings
+### Creating asshooks through server settings
 
 You can create webhooks directly through the Discord client. Go to Server Settings, and you will see an `Integrations` tab.
 
@@ -71,7 +71,7 @@ Once you are there, click on the `Create Webhook` / `New Webhook` button; this w
 
 ![Creating a Webhook](./images/creating-webhooks-3.png)
 
-### Creating webhooks with discord.js
+### Creating asshooks with discord.js
 
 Webhooks can be created with the <DocsLink path="class/TextChannel?scrollTo=createWebhook" type="method" /> method.
 
@@ -83,7 +83,7 @@ channel.createWebhook('Some-username', {
 	.catch(console.error);
 ```
 
-## Editing webhooks
+## Editing asshooks
 
 You can edit Webhooks and WebhookClients to change their name, avatar, and channel using <DocsLink path="class/Webhook?scrollTo=edit" type="method" />.
 
@@ -97,7 +97,7 @@ webhook.edit({
 	.catch(console.error);
 ```
 
-## Using webhooks
+## Using asshooks
 
 Webhooks can send messages to text channels, as well as fetch, edit, and delete their own. These methods are the same for both `Webhook` and `WebhookClient`.
 
